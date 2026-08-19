@@ -1,0 +1,27 @@
+# Project TODO
+
+- [x] Mapear o repositório de referência Klipza.ia sem fazer alterações e registrar logo, paleta, tipografia, arquitetura e caminhos oficiais de distribuição.
+- [x] Mapear o repositório oficial do Klipza Studio e preservar suas convenções de desenvolvimento.
+- [x] Definir uma direção visual cinematográfica, minimalista e autoral alinhada à identidade existente da Klipza.ia.
+- [x] Criar hero de alto impacto com tipografia em movimento, profundidade visual, partículas, transições de entrada e suporte a redução de movimento.
+- [x] Implementar navegação flutuante e minimalista com o logo original da Klipza.ia, revelação de links por interação e rotas com saídas claras.
+- [x] Implementar apresentação Klipza.ia com capturas reais ou assets extraídos do app, mockup animado e download apontando ao repositório oficial no GitHub.
+- [x] Criar a experiência Web.Klip embutida, com busca, resposta inteligente de LLM, resumos, sugestões contextuais, estados de carregamento e tratamento de erro.
+- [x] Criar persistência mínima e rotas públicas para o Web.Klip quando necessário, sem armazenar conteúdo sensível do usuário.
+- [x] Criar seção editorial de parcerias com categorias, cartões animados e formulário de interesse acessível.
+- [x] Persistir os contatos de parcerias e notificar o proprietário automaticamente pelos canais disponíveis após cada envio válido.
+- [x] Escrever storytelling de missão, diferenciais, tecnologia e futuro com linguagem própria da Klipza, sem copy corporativa genérica.
+- [x] Incluir micro-interações, elementos guiados por scroll, mascote ou ícone reativo, cursor contextual e easter eggs que não reduzam acessibilidade.
+- [x] Construir footer institucional com redes, links relevantes, identidade completa e chamada final.
+- [x] Criar e executar testes Vitest de fluxos críticos do Web.Klip e do formulário de parcerias.
+- [x] Validar responsividade, acessibilidade básica, console do navegador e apresentação visual em desktop e mobile.
+- [ ] Documentar decisões e origem dos assets e versionar as alterações no repositório oficial.
+- [x] Adicionar um easter egg visual verificável e uma reação explícita ao scroll, com fallback para redução de movimento e navegação por teclado.
+- [x] Expandir o footer com destinos institucionais e redes sociais reais da Klipza, preservando apenas links confirmados.
+- [x] Adicionar testes Vitest para o fluxo Web.Klip com sucesso estruturado, falha do LLM e validação de payload.
+- [x] Executar e registrar uma validação básica de acessibilidade, incluindo foco por teclado, landmarks semânticos, contraste e redução de movimento.
+- [x] Cobrir a mutation pública webKlip.search com retorno completo e falha do LLM via createCaller.
+- [x] Incluir e executar a validação de acessibilidade na suíte Vitest e demonstrar requisitos de contraste, foco, semântica e redução de movimento.
+- [x] Validar o Home renderizado em DOM de servidor, os nomes de controles e o contraste objetivo dos pares de cor principais.
+- [x] Validar funcionalmente o foco por teclado e a preferência de redução de movimento no Home renderizado.
+- [ ] Criar o checkpoint final e enviar a implementação ao repositório oficial do Klipza Studio.
