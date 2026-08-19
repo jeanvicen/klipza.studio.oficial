@@ -26,6 +26,10 @@ pnpm test
 pnpm build
 ```
 
+## Deploy no Vercel
+
+O `vercel.json` define `dist/public` como output de produção. Isso impede que o Vercel publique o bundle Node `dist/index.js` como conteúdo da página inicial. A interface institucional será entregue corretamente como SPA; as rotas que dependem do backend (Web.Klip, formulário e notificações) exigem que as mesmas variáveis de ambiente e um endpoint compatível estejam configurados no projeto Vercel. Para operar esses fluxos sem replicar credenciais, use a hospedagem integrada do projeto.
+
 ## Validação executada
 
 Os testes cobrem a resposta estruturada e a falha segura do Web.Klip, a mutation pública de busca, a persistência/notificação de parcerias, a sessão de autenticação e uma linha de base de acessibilidade com renderização DOM, foco de teclado, landmarks, contraste e redução de movimento.
