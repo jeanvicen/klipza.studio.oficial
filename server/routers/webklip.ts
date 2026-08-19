@@ -1,7 +1,7 @@
 import { TRPCError } from "@trpc/server";
 import { z } from "zod";
-import { invokeLLM } from "../_core/llm";
-import { publicProcedure, router } from "../_core/trpc";
+import { invokeLLM } from "../_core/llm.js";
+import { publicProcedure, router } from "../_core/trpc.js";
 
 const webKlipInput = z.object({
   query: z.string().trim().min(2, "Escreva uma pergunta um pouco mais específica.").max(320),

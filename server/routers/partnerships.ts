@@ -1,8 +1,8 @@
 import { TRPCError } from "@trpc/server";
 import { z } from "zod";
-import { createPartnershipInquiry } from "../db";
-import { notifyOwner } from "../_core/notification";
-import { publicProcedure, router } from "../_core/trpc";
+import { createPartnershipInquiry } from "../db.js";
+import { notifyOwner } from "../_core/notification.js";
+import { publicProcedure, router } from "../_core/trpc.js";
 
 export const partnershipInput = z.object({
   name: z.string().trim().min(2, "Informe seu nome.").max(120),
