@@ -15,7 +15,7 @@
 - [x] Construir footer institucional com redes, links relevantes, identidade completa e chamada final.
 - [x] Criar e executar testes Vitest de fluxos críticos do Web.Klip e do formulário de parcerias.
 - [x] Validar responsividade, acessibilidade básica, console do navegador e apresentação visual em desktop e mobile.
-- [ ] Documentar decisões e origem dos assets e versionar as alterações no repositório oficial.
+- [x] Documentar decisões e origem dos assets e versionar as alterações no repositório oficial.
 - [x] Adicionar um easter egg visual verificável e uma reação explícita ao scroll, com fallback para redução de movimento e navegação por teclado.
 - [x] Expandir o footer com destinos institucionais e redes sociais reais da Klipza, preservando apenas links confirmados.
 - [x] Adicionar testes Vitest para o fluxo Web.Klip com sucesso estruturado, falha do LLM e validação de payload.
@@ -24,4 +24,4 @@
 - [x] Incluir e executar a validação de acessibilidade na suíte Vitest e demonstrar requisitos de contraste, foco, semântica e redução de movimento.
 - [x] Validar o Home renderizado em DOM de servidor, os nomes de controles e o contraste objetivo dos pares de cor principais.
 - [x] Validar funcionalmente o foco por teclado e a preferência de redução de movimento no Home renderizado.
-- [ ] Criar o checkpoint final e enviar a implementação ao repositório oficial do Klipza Studio.
+- [x] Criar o checkpoint final e enviar a implementação ao repositório oficial do Klipza Studio.
