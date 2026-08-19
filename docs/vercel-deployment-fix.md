@@ -27,6 +27,8 @@ O projeto no Vercel não possui variáveis de ambiente no momento. A função tR
 
 Enquanto essas variáveis não existirem, o Web.Klip responde que o motor de leitura está indisponível e o formulário informa que o canal de parcerias está em pausa. Nenhuma mensagem é persistida e nenhuma notificação é disparada nesse estado.
 
+Em validação direta no domínio de produção, `partnerships.submit` retornou **503 SERVICE_UNAVAILABLE** com a mensagem pública prevista, sem expor o erro interno de banco. O Web.Klip também retorna a mensagem pública de motor indisponível sem tentar apresentar uma resposta como se a IA estivesse ativa.
+
 ## Referências oficiais
 
 1. [Express on Vercel](https://vercel.com/docs/frameworks/backend/express) — o aplicativo Express deve ser exportado como padrão ou iniciado em uma entrada reconhecida; assets estáticos devem ser servidos pelo diretório público do Vercel.
