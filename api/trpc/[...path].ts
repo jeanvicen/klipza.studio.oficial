@@ -5,24 +5,22 @@ import { createContext } from "../../server/_core/context";
 
 const app = express();
 
+app.set("trust proxy", 1);
 app.use(express.json({ limit: "2mb" }));
 app.use(express.urlencoded({ limit: "2mb", extended: true }));
 
-// O Vercel pode encaminhar o caminho com ou sem o prefixo da função.
-// Normalizamos antes de delegar ao middleware para manter o contrato /api/trpc/*.
+// A função catch-all pode receber o caminho completo ou somente o trecho depois
+// de /api/trpc. O adaptador do tRPC precisa receber apenas /procedimento.
 app.use((req, _res, next) => {
-  if (!req.url.startsWith("/api/trpc")) {
-    req.url = `/api/trpc${req.url.startsWith("/") ? req.url : `/${req.url}`}`;
+  const trpcPrefix = "/api/trpc";
+  const prefixPosition = req.url.indexOf(trpcPrefix);
+  if (prefixPosition >= 0) {
+    const procedurePath = req.url.slice(prefixPosition + trpcPrefix.length);
+    req.url = procedurePath || "/";
   }
   next();
 });
 
-app.use(
-  "/api/trpc",
-  createExpressMiddleware({
-    router: appRouter,
-    createContext,
-  })
-);
+app.use(createExpressMiddleware({ router: appRouter, createContext }));
 
 export default app;
