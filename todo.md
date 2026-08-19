@@ -30,3 +30,4 @@
 - [ ] Confirmar que o domínio publicado renderiza a experiência Klipza Studio e versionar a correção no repositório oficial.
 - [ ] Criar uma entrada serverless compatível com Vercel para as rotas tRPC e preservar o servidor local existente.
 - [ ] Documentar as variáveis de ambiente necessárias no Vercel e validar o retorno seguro das APIs quando não estiverem configuradas.
+- [ ] Adicionar e verificar uma rota de healthcheck isolada para diagnosticar o runtime serverless do Vercel.
