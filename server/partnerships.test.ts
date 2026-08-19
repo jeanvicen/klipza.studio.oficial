@@ -38,4 +38,17 @@ describe("partnership inquiry", () => {
     expect(createPartnershipInquiry).toHaveBeenCalledWith(input);
     expect(notifyOwner).toHaveBeenCalledWith(expect.objectContaining({ title: expect.stringContaining("pesquisa") }));
   });
+
+  it("retorna uma mensagem pública segura quando o banco não está disponível", async () => {
+    createPartnershipInquiry.mockRejectedValueOnce(new Error("Database is not available for partnership inquiries"));
+    notifyOwner.mockClear();
+    const caller = partnershipsRouter.createCaller({} as never);
+
+    await expect(caller.submit(input)).rejects.toMatchObject({
+      code: "SERVICE_UNAVAILABLE",
+      message: expect.stringContaining("canal de parcerias está em pausa"),
+    });
+
+    expect(notifyOwner).not.toHaveBeenCalled();
+  });
 });

@@ -16,6 +16,17 @@ Após a propagação, a página inicial passou a servir o `index.html` da Klipza
 
 Para manter as funções de produto desacopladas das integrações de OAuth e storage do ambiente Manus, a entrada final do Vercel atende o tRPC diretamente em `api/trpc/[...path].ts`. Isso preserva Web.Klip e o formulário de parcerias, que são os fluxos dinâmicos públicos do Studio.
 
+## Integrações adiadas
+
+O projeto no Vercel não possui variáveis de ambiente no momento. A função tRPC está carregando sem a falha de runtime anterior e retorna uma mensagem segura quando uma integração não está disponível. A ativação completa ficará para uma etapa posterior, quando houver as credenciais apropriadas no painel do Vercel.
+
+| Recurso | Variável necessária | Estado atual |
+| --- | --- | --- |
+| Síntese inteligente do Web.Klip | `GEMINI_API_KEY` após adaptação do provedor de IA | Adiada por decisão do proprietário |
+| Contatos e notificação de parcerias | `DATABASE_URL` e as credenciais do canal de notificação | Adiada por decisão do proprietário |
+
+Enquanto essas variáveis não existirem, o Web.Klip responde que o motor de leitura está indisponível e o formulário informa que o canal de parcerias está em pausa. Nenhuma mensagem é persistida e nenhuma notificação é disparada nesse estado.
+
 ## Referências oficiais
 
 1. [Express on Vercel](https://vercel.com/docs/frameworks/backend/express) — o aplicativo Express deve ser exportado como padrão ou iniciado em uma entrada reconhecida; assets estáticos devem ser servidos pelo diretório público do Vercel.

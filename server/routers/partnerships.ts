@@ -24,7 +24,15 @@ export function buildPartnershipNotification(input: PartnershipInput) {
 
 export const partnershipsRouter = router({
   submit: publicProcedure.input(partnershipInput).mutation(async ({ input }) => {
-    await createPartnershipInquiry(input);
+    try {
+      await createPartnershipInquiry(input);
+    } catch (error) {
+      console.error("[Partnerships] Failed to record inquiry:", error);
+      throw new TRPCError({
+        code: "SERVICE_UNAVAILABLE",
+        message: "O canal de parcerias está em pausa enquanto o Studio prepara sua infraestrutura. Tente novamente em breve.",
+      });
+    }
 
     const notified = await notifyOwner(buildPartnershipNotification(input));
     if (!notified) {

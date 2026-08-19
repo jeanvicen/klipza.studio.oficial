@@ -25,9 +25,16 @@
 - [x] Validar o Home renderizado em DOM de servidor, os nomes de controles e o contraste objetivo dos pares de cor principais.
 - [x] Validar funcionalmente o foco por teclado e a preferência de redução de movimento no Home renderizado.
 - [x] Criar o checkpoint final e enviar a implementação ao repositório oficial do Klipza Studio.
-- [ ] Diagnosticar por que o deploy do Vercel está servindo arquivos de código em vez do build da aplicação.
-- [ ] Corrigir a configuração de build e output do Vercel sem modificar o repositório de referência Klipza.ia.
-- [ ] Confirmar que o domínio publicado renderiza a experiência Klipza Studio e versionar a correção no repositório oficial.
-- [ ] Criar uma entrada serverless compatível com Vercel para as rotas tRPC e preservar o servidor local existente.
-- [ ] Documentar as variáveis de ambiente necessárias no Vercel e validar o retorno seguro das APIs quando não estiverem configuradas.
-- [ ] Adicionar e verificar uma rota de healthcheck isolada para diagnosticar o runtime serverless do Vercel.
+- [x] Diagnosticar por que o deploy do Vercel está servindo arquivos de código em vez do build da aplicação.
+- [x] Corrigir a configuração de build e output do Vercel sem modificar o repositório de referência Klipza.ia.
+- [x] Confirmar que o domínio publicado renderiza a experiência Klipza Studio e versionar a correção no repositório oficial.
+- [x] Criar uma entrada serverless compatível com Vercel para as rotas tRPC e preservar o servidor local existente.
+- [x] Documentar as variáveis de ambiente necessárias no Vercel e validar o retorno seguro das APIs quando não estiverem configuradas.
+- [x] Adicionar e verificar uma rota de healthcheck isolada para diagnosticar o runtime serverless do Vercel.
+- [x] Acessar o projeto Klipza Studio no Vercel com a sessão do usuário e revisar os logs do runtime do deploy mais recente.
+- [x] Aplicar no Vercel apenas os ajustes necessários de framework, build, output e variáveis para remover a falha da função tRPC.
+- [x] Adiado por solicitação do usuário: configurar credencial de IA no Vercel e ativar respostas inteligentes reais do Web.Klip.
+- [x] Adiado por solicitação do usuário: configurar DATABASE_URL no Vercel e ativar a persistência e notificação do formulário de parcerias.
+- [x] Validar em produção no Vercel a rota pública de parcerias sem DATABASE_URL e registrar o comportamento seguro esperado.
+- [x] Atualizar a documentação do deploy com o estado real do Web.Klip e de parcerias enquanto não houver credenciais externas.
+- [x] Cobrir com Vitest a resposta pública segura do formulário de parcerias quando o banco estiver indisponível.
