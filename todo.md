@@ -38,3 +38,10 @@
 - [x] Validar em produção no Vercel a rota pública de parcerias sem DATABASE_URL e registrar o comportamento seguro esperado.
 - [x] Atualizar a documentação do deploy com o estado real do Web.Klip e de parcerias enquanto não houver credenciais externas.
 - [x] Cobrir com Vitest a resposta pública segura do formulário de parcerias quando o banco estiver indisponível.
+- [x] Auditar e corrigir todos os contrastes insuficientes, especialmente textos escuros sobre fundos escuros.
+- [x] Definir uma direção visual 3D cinematográfica unificada, com materiais, profundidade, luz e hierarquia coerentes.
+- [x] Substituir elementos decorativos desconectados por composições 3D intencionais e interações que reforcem a narrativa da Klipza.
+- [x] Refinar as animações de entrada, scroll e hover com timing profissional e suporte a redução de movimento.
+- [x] Revisar visualmente desktop e mobile após o redesenho e versionar a experiência refinada.
+- [x] Criar checkpoint e enviar ao repositório oficial o redesign visual 3D refinado.
+- [x] Confirmar o estado final publicado do redesign em desktop e mobile após o versionamento.

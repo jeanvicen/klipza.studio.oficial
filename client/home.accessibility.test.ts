@@ -104,9 +104,9 @@ describe("Klipza Studio accessibility baseline", () => {
   it("declara e comprova contraste alto para os campos principais", () => {
     expect(styleSource).toContain("--ink: #080a0d");
     expect(styleSource).toContain("--warm-white: #fbfaf7");
-    expect(styleSource).toContain("--acid: #9ef0ff");
+    expect(styleSource).toContain("--acid: #84edff");
     expect(styleSource).toContain("background: var(--ink); color: var(--warm-white)");
     expect(contrastRatio("#080a0d", "#fbfaf7")).toBeGreaterThan(7);
-    expect(contrastRatio("#080a0d", "#9ef0ff")).toBeGreaterThan(7);
+    expect(contrastRatio("#080a0d", "#84edff")).toBeGreaterThan(7);
   });
 });

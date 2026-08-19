@@ -87,6 +87,8 @@ export default function Home() {
     const updatePointer = (event: globalThis.MouseEvent) => {
       document.documentElement.style.setProperty("--pointer-x", `${event.clientX}px`);
       document.documentElement.style.setProperty("--pointer-y", `${event.clientY}px`);
+      document.documentElement.style.setProperty("--pointer-rx", `${(event.clientX / window.innerWidth - .5) * 2}`);
+      document.documentElement.style.setProperty("--pointer-ry", `${(event.clientY / window.innerHeight - .5) * 2}`);
     };
     window.addEventListener("pointermove", updatePointer, { passive: true });
     return () => window.removeEventListener("pointermove", updatePointer);
@@ -180,6 +182,12 @@ export default function Home() {
         <div className="orbit-field" aria-hidden="true">
           {Array.from({ length: 36 }, (_, index) => <i key={index} style={{ "--i": index } as React.CSSProperties} />)}
         </div>
+        <div className="hero-depth-stage" aria-hidden="true">
+          <div className="depth-plane depth-plane-a" />
+          <div className="depth-plane depth-plane-b" />
+          <div className="depth-prism"><span /><span /><span /></div>
+          <div className="depth-flare" />
+        </div>
         <div className="hero-copy">
           <p className="eyebrow enter-1"><span className="status-dot" /> Estúdio de sistemas em movimento</p>
           <h1 id="hero-title" aria-label="A ideia ganha corpo quando ganha pulso.">
@@ -196,6 +204,7 @@ export default function Home() {
           </div>
         </div>
         <div className="hero-mark-wrap" aria-hidden="true">
+          <div className="mark-shadow" />
           <div className="mark-rings"><span /><span /><span /></div>
           <BrandMark className="hero-mark" />
           <p>FREQUÊNCIA<br />KLIPZA 001</p>
@@ -253,7 +262,8 @@ export default function Home() {
           <div className="product-device-wrap">
             <div className="product-orbit product-orbit-one" />
             <div className="product-orbit product-orbit-two" />
-            <div className="product-device">
+          <div className="product-device">
+              <div className="device-reflection" aria-hidden="true" />
               <div className="device-top"><span /><span /><span /><p>klipza.ia</p><Command size={13} /></div>
               <div className="device-shot"><img src={PRODUCT_SCREEN_URL} alt="Tela pública de acesso do aplicativo Klipza.ia" /></div>
               <div className="device-caption"><span><Sparkles size={13} /> interface viva</span><span>01 / 01</span></div>
@@ -265,6 +275,7 @@ export default function Home() {
 
       <section className="webklip-section" id="web-klip" aria-labelledby="webklip-title">
         <div className="webklip-noise" aria-hidden="true" />
+        <div className="webklip-constellation" aria-hidden="true"><span /><span /><span /><i /><i /><i /></div>
         <div className="section-head section-head-dark">
           <p className="eyebrow"><span>03</span> Pesquisa com pulso</p>
           <p className="web-status"><i /> PRONTO PARA LER O MUNDO</p>
@@ -322,7 +333,7 @@ export default function Home() {
         <div className="section-head section-head-dark"><p className="eyebrow"><span>05</span> Parcerias que dão forma</p><p className="section-note">Procuramos provocações, não apenas briefing.</p></div>
         <div className="partners-intro"><h2 id="partners-title">Quando a ideia pede<br /><em>mais mundo.</em></h2><p>Se existe uma pergunta difícil, uma tecnologia com potencial ou uma comunidade que merece uma ferramenta mais humana, queremos ouvir.</p></div>
         <div className="partner-grid">
-          {partnerTypes.map(([title, copy], index) => <article key={title} className="partner-card"><span>0{index + 1}</span><h3>{title}</h3><p>{copy}</p><button onClick={() => scrollToId("contact")} aria-label={`Falar sobre parceria em ${title}`}><ArrowUpRight size={20} /></button></article>)}
+          {partnerTypes.map(([title, copy], index) => <article key={title} className="partner-card"><div className="partner-object" aria-hidden="true" /><span>0{index + 1}</span><h3>{title}</h3><p>{copy}</p><button onClick={() => scrollToId("contact")} aria-label={`Falar sobre parceria em ${title}`}><ArrowUpRight size={20} /></button></article>)}
         </div>
         <div id="contact" className="contact-panel">
           <div className="contact-side"><p className="eyebrow">CANAL ABERTO</p><h3>Uma conexão pode começar por poucas linhas.</h3><p>Conte o que está querendo mover. O Studio recebe o sinal daqui.</p><div className="contact-signal"><BrandMark /><span>CANAL SEGURO<br />DIRETO PARA O STUDIO</span></div></div>
