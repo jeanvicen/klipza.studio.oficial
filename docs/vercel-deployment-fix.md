@@ -12,6 +12,10 @@ O Vite continuará gerando o cliente em `dist/public`. O Vercel receberá `dist/
 
 O commit de correção foi enviado ao branch `main`, que é a origem mostrada no deploy. A primeira consulta ao domínio ainda respondeu com o artefato anterior, o que pode ocorrer enquanto o novo deploy é processado. O painel do Vercel requer uma sessão autenticada neste ambiente, portanto o status detalhado de build não pôde ser consultado diretamente.
 
+Após a propagação, a página inicial passou a servir o `index.html` da Klipza Studio corretamente. A rota isolada `GET /api/health` também retornou `200`, confirmando que o runtime serverless está ativo. A entrada Express principal ainda requer investigação: `GET /api` retorna `FUNCTION_INVOCATION_FAILED` e a rota tRPC dinâmica responde `404`. Os detalhes dos runtime logs do Vercel continuam indisponíveis sem a sessão autenticada do proprietário.
+
+Para manter as funções de produto desacopladas das integrações de OAuth e storage do ambiente Manus, a entrada final do Vercel atende o tRPC diretamente em `api/trpc/[...path].ts`. Isso preserva Web.Klip e o formulário de parcerias, que são os fluxos dinâmicos públicos do Studio.
+
 ## Referências oficiais
 
 1. [Express on Vercel](https://vercel.com/docs/frameworks/backend/express) — o aplicativo Express deve ser exportado como padrão ou iniciado em uma entrada reconhecida; assets estáticos devem ser servidos pelo diretório público do Vercel.
