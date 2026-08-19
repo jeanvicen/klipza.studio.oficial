@@ -25,3 +25,8 @@
 - [x] Validar o Home renderizado em DOM de servidor, os nomes de controles e o contraste objetivo dos pares de cor principais.
 - [x] Validar funcionalmente o foco por teclado e a preferência de redução de movimento no Home renderizado.
 - [x] Criar o checkpoint final e enviar a implementação ao repositório oficial do Klipza Studio.
+- [ ] Diagnosticar por que o deploy do Vercel está servindo arquivos de código em vez do build da aplicação.
+- [ ] Corrigir a configuração de build e output do Vercel sem modificar o repositório de referência Klipza.ia.
+- [ ] Confirmar que o domínio publicado renderiza a experiência Klipza Studio e versionar a correção no repositório oficial.
+- [ ] Criar uma entrada serverless compatível com Vercel para as rotas tRPC e preservar o servidor local existente.
+- [ ] Documentar as variáveis de ambiente necessárias no Vercel e validar o retorno seguro das APIs quando não estiverem configuradas.

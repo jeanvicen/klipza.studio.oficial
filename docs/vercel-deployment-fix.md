@@ -8,6 +8,10 @@ O domínio `https://klipzastudiooficial.vercel.app/` estava entregando o conteú
 
 O Vite continuará gerando o cliente em `dist/public`. O Vercel receberá `dist/public` como diretório estático e uma entrada Express exportada como função para rotas `/api/*`. As regras de rewrite reservarão `/api/*` para a função e servirão `index.html` para as rotas restantes da SPA.
 
+## Estado da validação externa
+
+O commit de correção foi enviado ao branch `main`, que é a origem mostrada no deploy. A primeira consulta ao domínio ainda respondeu com o artefato anterior, o que pode ocorrer enquanto o novo deploy é processado. O painel do Vercel requer uma sessão autenticada neste ambiente, portanto o status detalhado de build não pôde ser consultado diretamente.
+
 ## Referências oficiais
 
 1. [Express on Vercel](https://vercel.com/docs/frameworks/backend/express) — o aplicativo Express deve ser exportado como padrão ou iniciado em uma entrada reconhecida; assets estáticos devem ser servidos pelo diretório público do Vercel.
